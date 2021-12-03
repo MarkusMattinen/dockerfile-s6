@@ -9,4 +9,7 @@ RUN curl -o /tmp/s6-overlay.tar.gz -L "https://github.com/just-containers/s6-ove
  && tar xfz /tmp/s6-overlay.tar.gz -C / \
  && rm -rf /tmp/*
 
+# keep all env variables
+ENV S6_KEEP_ENV=1
+
 ENTRYPOINT [ "/init"  ]
